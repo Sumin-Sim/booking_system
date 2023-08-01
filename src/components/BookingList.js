@@ -7,10 +7,10 @@ export default function BookingList() {
                 <dl>
                     <dt>예약자명 외 (예약인원 - 1)명</dt>
 
-                    <dd>예약 항목</dd>
-                    <dd>연락처</dd>
-                    <dd>날짜</dd>
-                    <dd>시간</dd>
+                    <dd>주문 제작 / 원데이 클래스</dd>
+                    <dd>010-0000-0000</dd>
+                    <dd>2000년 01월 01일</dd>
+                    <dd>12시 00분</dd>
                 </dl>
 
                 <p>
