@@ -1,16 +1,16 @@
-import optionData from "../bookOption.json";
-
 import { PiCalendarPlusDuotone, PiCalendarCheckDuotone } from "react-icons/pi";
 import { BsExclamationCircleFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 
-export default function BookMain() {
+export default function BookMain(props) {
     return (
         <section id="bookMain">
             <h2><span><PiCalendarPlusDuotone /></span>예약하기</h2>
             
             <form name="booking" method="post">
-                <BookStep01 />
+                <BookStep01
+                    optionData = {props.optionData}
+                />
                 <BookStep02 />
                 <BookModal />
             </form>
@@ -18,14 +18,14 @@ export default function BookMain() {
     );
 }
 
-function BookStep01() {
+function BookStep01(props) {
     return (
         <fieldset>
             <legend>1단계. 예약 항목 선택</legend>
 
             <ul className="optionList">
                 {
-                optionData.map(item => {
+                props.optionData.map(item => {
                     return (
                         <li>
                             <input type="radio" name="bookOption" id={item.value} value={item.value} required />
