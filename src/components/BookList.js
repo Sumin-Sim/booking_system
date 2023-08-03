@@ -1,7 +1,6 @@
 export default function BookList() {
     return (
         <div className="listEach">
-            <div>
                 <dl>
                     <dt>예약자명 외 (예약인원 - 1)명</dt>
 
@@ -15,8 +14,6 @@ export default function BookList() {
                 <p>
                     <button type="button">예약 취소</button>
                 </p>
-            </div>
-                
         </div>
     );
 }

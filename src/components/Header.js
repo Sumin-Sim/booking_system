@@ -5,25 +5,6 @@ export default function Header() {
                 <p>
                     주문 제작/원데이 클래스 예약하기
                 </p>
-
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
         </header>
     );
 }

@@ -1,192 +1,39 @@
 body {
-    background-color: #ffe8e8;
     font: 400 16px/1 'Pretendard-Regular', sans-serif; color: #292929;
 }
-div#wrap {
-    width: 1024px;
-    margin: 64px auto 0;
-    box-sizing: border-box;
-    border: 4px #ff9f9f solid;
-    border-radius: 16px;
-    background-color: #fff;
-}
-
-
 
 
 /* header */
 header {
-    padding: 24px 0 16px;
+    padding: 32px 0;
     display: flex;
     flex-direction: column; align-items: center;
     position: relative;
-    background-color: #ff9f9f;
+    background-color: #ab9078;
 }
     header>h1 {
         margin-bottom: 8px;
-        font: 400 48px/1 'Alfa Slab One', cursive; color: #fff;
-        text-shadow: 2px 2px #eb1808;
+        font: 900 48px/1 'Sacramento', cursive; color: #fff;
+        text-shadow: 2px 2px #3b1a0b;
     }
     header>p {
-        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #eb1808;
+        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
     }
 
 
-    /* header decoration */
-    header>div {
-        width: 100%; height: 32px;
-        display: flex;
-        position: absolute;
-        top: 112px; left: 0;
-    }
-        header>div>span {
-            width: 64px; height: 32px;
-            display: block;
-            border-radius: 0 0 32px 32px;
-            background-color: #ff9f9f;
-            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
-        }
 
-
-
-
-/* bookList */
-section#bookList {
-    width: 880px;
-    margin: 0 auto 64px;
-}
-    section#bookList>h2 {
-        margin-bottom: 32px;
-        box-sizing: border-box;
-        position: relative;
-        font: 900 24px/1 'Pretendard-Black', sans-serif;
-        text-indent: 40px;
-        line-height: 32px;
-    }
-    section#bookList>h2>span:nth-of-type(1) {
-        position: absolute;
-        top: 0px; left: -40px;
-        font-size: 32px;
-    }
-
-    /* search */
-    div#searchBox {
-        height: 32px;
-        margin: 0 auto 24px;
-        display: flex;
-        position: relative;
-    }
-        div#searchBox>input {
-            width: 752px; height: 100%;
-            box-sizing: border-box;
-            border: 2px #ff9f9f solid;
-            border-radius: 8px 0 0 8px;
-        }
-        div#searchBox>p {
-            position: absolute;
-            top: 4px; right: 136px;
-            font-size: 24px; color: #ff9f9f;
-        }
-        div.sortBtn {
-            width: 130px; height: 100%;
-            display: flex;
-            justify-content: center; align-items: center;
-            border-radius: 0 8px 8px 0;
-            background-color: #ff9f9f;
-            color: #fff;
-            cursor: pointer;
-        }
-        div.sortBtn>p>span {
-            position: absolute;
-            top: 8px; right: 8px;
-            font-size: 16px;
-        }
-        div.sortBtn>ul {
-            width: 130px; height: 96px;
-            display: flex;
-            flex-direction: column; justify-content: space-between; align-items: center;
-            position: absolute;
-            top: 0; right: 0;
-            border: 0px #ff9f9f solid;
-            border-radius: 8px;
-            background-color: #ff9f9f;
-            display: none;
-        }
-        div.sortBtn>ul>li {
-            height: 32px;
-            display: flex;
-            justify-content: center; align-items: center;
-        }
-
-
-
-
-/* BookingList */
-div.listEach {
-    width: 880px;
-    margin: 0 auto; padding: 32px;
-    box-sizing: border-box;
-    border-bottom: 2px #ff9f9f solid;
-}
-    div.listEach>div {
-        position: relative;
-    }
-    div.listEach dt {
-        margin-bottom: 8px;
-        font: 900 20px/1 'Pretendard-Black', sans-serif;
-    }
-    div.listEach dd:nth-of-type(1) {
-        margin: 0 8px 32px 0;
-        display: inline-block;
-        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #eb1808;
-    }
-    div.listEach dd:nth-of-type(2) {
-        display: inline-block;
-        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #eb1808;
-    }
-    div.listEach dd:nth-of-type(3) {
-        margin-bottom: 4px;
-        font: 900 16px/1 'Pretendard-Black', sans-serif;
-    }
-    div.listEach dd:nth-of-type(4) {
-        margin-bottom: 4px;
-    }
-    div.listEach dd:nth-of-type(5) {
-        text-align: justify;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        color: #888;
-    }
-    div.listEach p {
-        position: absolute;
-        top: 0; right: 0;
-    }
-    div.listEach p>button {
-        padding: 8px 16px;
-        display: flex;
-        border: none;
-        border-radius: 4px;
-        background-color: #eb1808;
-        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #fff;
-        cursor: pointer;
-    }
-
-
+    
 /* BookMain */
 section#bookMain {
-    width: 880px; height: 800px;
-    margin: 96px auto 64px;
+    width: 1024px; height: 800px;
+    margin: 64px auto 0;
     position: relative;
-    box-sizing: border-box;
-    border-bottom: 2px #ff9f9f dotted;
 }
     section#bookMain>h2 {
-        font: 900 24px/1 'Pretendard-Black', sans-serif;
-        text-indent: 40px;
-        line-height: 32px;
+        font: 900 24px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
+        text-indent: 40px; line-height: 32px;
     }
-    section#bookMain>h2>span:nth-of-type(1) {
+    section#bookMain>h2>span {
         position: absolute;
         top: 0px; left: -40px;
         font-size: 32px;
@@ -195,184 +42,470 @@ section#bookMain {
     /* form */
     section#bookMain>form {
     }
+        /* common */
         section#bookMain fieldset {
             width: 100%; height: 600px;
             position: absolute;
             top: 72px; left: 0;
-            background-color: #ffffff80;
+            background-color: #fff;
         }
-        section#bookMain fieldset>legend {
-            padding: 8px 24px;
-            position: absolute;
-            top: -72px; left: 144px;
-            border-radius: 16px;
-            background-color: #ff9f9f;
-            color: #fff;
-        }
-        button.nextStep, input[type="submit"] {
-            width: 120px;
-            padding: 8px 24px 8px 24px;
-            position: absolute;
-            bottom: -64px; right: 0;
-            border-radius: 16px;
-            background-color: #ff9f9f;
-            font: 900 16px/1 'Pretendard-Black', sans-serif; color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-        button.nextStep:hover, input[type="submit"]:hover {
-            background-color: #eb1808;
-        }
+            section#bookMain fieldset>legend {
+                padding: 8px 24px;
+                position: absolute;
+                top: -72px; left: 144px;
+                border-radius: 16px;
+                background-color: #3b1a0b;
+                color: #fff;
+            }
+            button.nextStep, button.prevStep {
+                width: 120px;
+                padding: 8px 24px;
+                position: absolute;
+                bottom: -64px; right: 0;
+                border-radius: 16px;
+                background-color: #ab9078;
+                font: 900 16px/1 'Pretendard-Black', sans-serif; color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+            button.prevStep {
+                bottom: -64px; left: 0;
+            }
+            button.nextStep:hover, button.prevStep:hover {
+                background-color: #3b1a0b;
+            }
 
         /* bookStep01 */
         ul.optionList {
             width: 100%; height: 100%;
             display: flex;
-            flex-wrap: wrap; justify-content: space-between; align-content: space-between;
-            text-align: center;
+            flex-direction: column; flex-wrap: wrap; justify-content: space-between; align-content: space-between;
         }
+            ul.optionList>li {
+                display: flex;
+                align-items: center;
+            }
             ul.optionList input {
                 width: 16px; height: 16px;
-                margin: 0 0 8px;
+                margin: 0; margin-right: 8px;
                 appearance: none;
-                border: 1px #eb1808 solid;
-                border-radius: 8px;
-                background-color: #fff;
+                border: 2px #3b1a0b solid;
             }
-            ul.optionList input:focus {
+            ul.optionList input:checked {
                 background-color: #fff;
-                border: 6px #eb1808 solid;
+                border: 6px #3b1a0b solid;
             }
+            /* list */
             ul.optionList figure {
-                width: 200px;
-                position: relative;
-                box-sizing: border-box;
-                border: 2px #ff9f9f solid;
-                border-radius: 8px;
+                width: 440px; height: 130px;
+                display: flex;
+                flex-direction: row-reverse;
                 overflow: hidden;
+                box-sizing: border-box;
                 cursor: pointer;
+                border-bottom: 1px #ab9078 solid;
+            }
+            ul.optionList figure:hover {
+                background-color: #ab9078;
             }
                 ul.optionList figure>img {
-                    width: 100%;
+                    height: 100%;
                 }
                 ul.optionList figcaption {
-                    padding: 16px;
+                    width: 60%;
+                    padding-right: 24px;
+                    display: flex;
+                    align-items: center;
                 }
                 ul.optionList figcaption dt {
-                    font: 900 16px/1 'Pretendard-Black', sans-serif; color: #ff9f9f;
+                    margin-bottom: 8px;
+                    font: 900 16px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
                 }
                 ul.optionList figcaption dd {
-                    width: 100%; height: 100%;
-                    padding: 32px;
-                    position: absolute;
-                    top: 0; left: 0;
-                    box-sizing: border-box;
-                    background-color: rgba(0, 0, 0, 0.6);
-                    font-size: 12px; color: #fff;
-                    text-align: justify; line-height: 1.6;
-                    display: none;
-                }
-                ul.optionList figure:hover figcaption dd {
-                    display: block;
+                    font-size: 12px;
+                    text-align: justify; line-height: 1.2;
                 }
 
 
         /* bookStep02 */
         fieldset:nth-of-type(2) {
             display: flex;
-            flex-wrap: wrap; justify-content: space-between; align-content: space-between;
-            /* display: none; */
+            flex-direction: column; justify-content: space-between; align-content: space-between;
+            display: none;
         }
+        /* common */
         fieldset:nth-of-type(2) ul, fieldset:nth-of-type(2) div {
             width: 100%;
             display: flex;
             justify-content: space-between; align-items: center;
             position: relative;
-            background-color: rgba(0, 255, 255, 0.226);
         }
-        fieldset:nth-of-type(2) li>span {
-            width: 2px; height: 24px;
-            display: block;
-            background-color: #ff9f9f;
-        }
-
-        fieldset:nth-of-type(2) ul:nth-of-type(1) label,
-        fieldset:nth-of-type(2) ul:nth-of-type(2) label,
-        fieldset:nth-of-type(2) div label {
-            display: inline-block;
-            margin-right: 16px;
-            font: 900 16px/1 'Pretendard-Black', sans-serif; color: #ff9f9f;
-        }
-        fieldset:nth-of-type(2) input,
-        fieldset:nth-of-type(2) textarea {
-            height: 24px;
-            box-sizing: border-box;
-            border: 2px #ff9f9f solid;
-            border-radius: 12px;
-            font-family: 'Pretendard-Regular', sans-serif; font-weight: 400;
-            text-align: center;
-        }
-        fieldset:nth-of-type(2) ul:nth-of-type(1) input {
-            width: 240px;
-        }
-        fieldset:nth-of-type(2) ul:nth-of-type(2) input {
-            width: 240px;
-        }
-
-
-        /* row2 */
-        fieldset:nth-of-type(2) ul:nth-of-type(2) label {
-        }
+            fieldset:nth-of-type(2) li>span {
+                width: 2px; height: 24px;
+                display: block;
+                background-color: #ab9078;
+            }
+            fieldset:nth-of-type(2) ul:nth-of-type(1) label,
+            fieldset:nth-of-type(2) ul:nth-of-type(2) label,
+            fieldset:nth-of-type(2) div label,
+            fieldset:nth-of-type(2) div h3 {
+                display: inline-block;
+                margin-right: 16px;
+                font: 900 16px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
+            }
+            fieldset:nth-of-type(2) li>input,
+            fieldset:nth-of-type(2) textarea {
+                height: 24px;
+                border: none;
+                outline: none;
+                background-color: #ab9078;
+                font: 400 16px/1 'Pretendard-Regular', sans-serif; color: #fff;
+                text-align: center;
+            }
+            fieldset:nth-of-type(2) ul:nth-child(2) input, fieldset:nth-of-type(3) ul:nth-child(2) input {
+                width: 200px;
+            }
+            fieldset:nth-of-type(2) ul:nth-child(2) li:last-child input {
+                width: 80px;
+            }
 
 
-        /* row3 */
-
-
-
-        /* row4 */
-
-
-        
-
-
-        /*
-        section#bookMain fieldset input, section#bookMain fieldset textarea {
-            width: 160px; height: 24px;
-            box-sizing: border-box;
-            border: 2px #ff9f9f solid;
-            border-radius: 12px;
-            font-family: 'Pretendard-Regular', sans-serif; font-weight: 400;
-            text-align: center;
-        }
-        section#bookMain fieldset textarea {
-            width: 320px; min-height: 24px;
-            resize: vertical;
-        }
-        section#bookMain fieldset>div>p {
+        /* row1 */
+        fieldset:nth-of-type(2) ul:nth-child(2) p {
             position: absolute;
             top: 32px; right: 0;
             font-size: 12px; color: #888;
         }
-        section#bookMain fieldset:nth-of-type(2) {
-            width: 100%;
-            display: flex;
-            justify-content: space-between; align-items: center;
 
+
+        /* row2 */
+
+
+        /* row3 */
+        fieldset:nth-of-type(2) textarea {
+            width: 900px; min-height: 26px; max-height: 64px;
+            padding: 0 16px;
+            box-sizing: border-box;
+            font-family: 'Pretendard-Regular', sans-serif; font-weight: 400;
+            text-align: justify; line-height: 24px;
+            resize: vertical;
         }
-        section#bookMain fieldset:nth-of-type(3) {
+        fieldset:nth-of-type(2) textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+
+        /* row4 */
+        fieldset:nth-of-type(2) div:nth-child(5) {
+            flex-direction: column; align-items: start;
+        }
+        fieldset:nth-of-type(2) div:nth-child(5) h3 {
+            margin-bottom: 8px;
+        }
+        fieldset:nth-of-type(2) div:nth-child(5)>div {
+            height: 300px;
             display: flex;
             flex-direction: column;
+            border: 1px #ab9078 solid;
         }
-        section#bookMain fieldset:nth-of-type(3)>div {
+        fieldset:nth-of-type(2) div:nth-child(5) dl {
+            height: 100px;
+        }
+        fieldset:nth-of-type(2) div:nth-child(5) dt {
+            height: 32px;
+            padding: 0 16px;
             display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            border-top: 1px #ab9078 solid;
+            border-bottom: 1px #ab9078 solid;
         }
-        section#bookMain fieldset:nth-of-type(3)>div>label {
+        fieldset:nth-of-type(2) div:nth-child(5) dl:nth-child(1) dt {
+            border-top: none;
+        }
+        fieldset:nth-of-type(2) div:nth-child(5) dd {
+            height: 68px;
+            padding: 8px 16px;
+            overflow: scroll;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            color: #888;
+            text-align: justify;
+        }
+
+
+        /* row5 */
+        fieldset:nth-of-type(2) ul:nth-child(6) {
+            flex-direction: column; align-items: start;
+        }
+        fieldset:nth-of-type(2) ul:nth-child(6)>li {
+            display: flex;
+            align-items: center;
+        }
+        fieldset:nth-of-type(2) ul:nth-child(6)>li:first-child {
             margin-bottom: 16px;
-            font-size: 12px;
-            font-family: 'Pretendard-Regular', sans-serif; font-weight: 400;
-            line-height: 1.5;
         }
-        section#bookMain fieldset:nth-of-type(3)>div>input {
+        fieldset:nth-of-type(2) ul:nth-child(6) input {
             width: 16px; height: 16px;
-            margin-right: 16px;
-        } */
+            margin: 0; margin-right: 8px;
+            appearance: none;
+            border: 2px #3b1a0b solid;
+            background-color: transparent;
+        }
+        fieldset:nth-of-type(2) ul:nth-child(6) input:checked {
+            background-color: #fff;
+            border: 6px #3b1a0b solid;
+        }
+        fieldset:nth-of-type(2) ul:nth-child(6) p {
+            text-indent: 24px;
+            color: #dc2114;
+        }
+        fieldset:nth-of-type(2) ul:nth-child(6) p>span {
+            font-size: 20px;
+            position: absolute;
+            top: 30px; left: -24px;
+            color: #dc2114;
+        }
+
+
+
+
+/* bookModal */
+div#bookModal {
+    width: 100%; height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: none;
+}
+    div#bookModal>div.bookModal {
+        width: 640px; height: 640px;
+        padding: 64px;
+        position: fixed;
+        top: calc(50% - 320px); left: calc(50% - 320px);
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+    div.bookModal h4 {
+        margin-bottom: 32px; padding-bottom: 16px;
+        font: 900 24px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
+        text-indent: 40px; line-height: 32px;
+        position: relative;
+        border-bottom: 2px #3b1a0b solid;
+    }
+    div.bookModal h4>span {
+        position: absolute;
+        top: 0px; left: -40px;
+        font-size: 32px;
+    }
+
+    
+    /* modal content */
+    div.bookModal dl {
+        margin-bottom: 64px;
+        position: relative;
+    }
+    div.bookModal dt {
+        margin-bottom: 8px;
+        font: 900 20px/1 'Pretendard-Black', sans-serif;
+    }
+    div.bookModal dd:nth-of-type(1) {
+        margin: 0 8px 32px 0;
+        display: inline-block;
+        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
+    }
+    div.bookModal dd:nth-of-type(2) {
+        display: inline-block;
+        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
+    }
+    div.bookModal dd:nth-of-type(3) {
+        margin-bottom: 4px;
+        font: 900 16px/1 'Pretendard-Black', sans-serif;
+    }
+    div.bookModal dd:nth-of-type(4) {
+        margin-bottom: 4px;
+    }
+    div.bookModal dd:nth-of-type(5) {
+        height: 112px;
+        padding: 8px 16px;
+        overflow: scroll;
+        overflow-x: hidden;
+        text-align: justify;
+        background-color: #ddd;
+        color: #888;
+    }
+    div.bookModal div>label {
+        margin-top: 4px;
+        float: left;
+    }
+    div.bookModal div>label>b {
+        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #ab9078;
+    }
+    div.bookModal div>input {
+        width: 120px; height: 24px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        float: right;
+        border: 1px #3b1a0b solid;
+        outline: none;
+    }
+    div.bookModal div>p {
+        position: relative;
+        clear: both;
+        color: #dc2114;
+        text-indent: 24px;
+    }
+    div.bookModal div>p>span {
+        font-size: 20px;
+        position: absolute;
+        top: -2px; left: -24px;
+        color: #dc2114;
+
+    }
+    div.bookModal>input {
+        width: 120px;
+        padding: 8px 24px;
+        position: absolute;
+        bottom: 64px; left: calc(50% - 60px);
+        background-color: #ab9078;
+        font: 900 16px/1 'Pretendard-Black', sans-serif; color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    div.bookModal>input:hover {
+        background-color: #3b1a0b;
+    }
+    div.bookModal>p {
+        position: absolute;
+        top: 32px; right: 32px;
+        font-size: 32px; color: #3b1a0b;
+        cursor: pointer;
+    }
+
+
+
+
+/* bookList */
+section#bookList {
+    width: 100%;
+    background-color: #ab9078;
+}
+    section#bookList>div {
+        width: 1024px;
+        margin: 0 auto; padding: 64px 0;
+    }
+        section#bookList h2 {
+            margin-bottom: 32px;
+            position: relative;
+            font: 900 24px/1 'Pretendard-Black', sans-serif; color: #fff;
+            text-indent: 40px; line-height: 32px;
+        }
+        section#bookList h2>span {
+            position: absolute;
+            top: 0px; left: -40px;
+            font-size: 32px;
+        }
+
+
+        /* search */
+        div#searchBox {
+            width: 100%; height: 32px;
+            margin: 0 auto 48px;
+            display: flex;
+            position: relative;
+        }
+            div#searchBox>input {
+                width: 904px; height: 100%;
+                box-sizing: border-box;
+                outline: none;
+                border: 2px #3b1a0b solid;
+                border-right: none;
+                text-indent: 16px;
+            }
+            div#searchBox>p {
+                position: absolute;
+                top: 4px; right: 136px;
+                font-size: 24px; color: #3b1a0b;
+            }
+            div.sortBtn {
+                width: 120px; height: 100%;
+                display: flex;
+                justify-content: center; align-items: center;
+                background-color: #3b1a0b;
+                color: #fff;
+                cursor: pointer;
+            }
+            div.sortBtn>p>span {
+                position: absolute;
+                top: 8px; right: 8px;
+                font-size: 16px;
+            }
+            div.sortBtn>ul {
+                width: 120px; height: 96px;
+                display: flex;
+                flex-direction: column; justify-content: space-between; align-items: center;
+                position: absolute;
+                top: 0; right: 0;
+                box-sizing: border-box;
+                background-color: #3b1a0b;
+                display: none;
+            }
+            div.sortBtn>ul>li {
+                height: 32px;
+                display: flex;
+                justify-content: center; align-items: center;
+            }
+
+
+    /* listEach */
+    div.listEach {
+        width: 1024px;
+        margin: 0 auto 24px; padding: 32px;
+        position: relative;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+    div.listEach:last-child {
+        margin-bottom: 0;
+    }
+        div.listEach dt {
+            margin-bottom: 8px;
+            font: 900 20px/1 'Pretendard-Black', sans-serif;
+        }
+        div.listEach dd:nth-of-type(1) {
+            margin: 0 8px 32px 0;
+            display: inline-block;
+            font: 900 16px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
+        }
+        div.listEach dd:nth-of-type(2) {
+            display: inline-block;
+            font: 900 16px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
+        }
+        div.listEach dd:nth-of-type(3) {
+            margin-bottom: 4px;
+            font: 900 16px/1 'Pretendard-Black', sans-serif;
+        }
+        div.listEach dd:nth-of-type(4) {
+            margin-bottom: 4px;
+        }
+        div.listEach dd:nth-of-type(5) {
+            text-align: justify;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            color: #888;
+        }
+        div.listEach p {
+            position: absolute;
+            top: 32px; right: 32px;
+        }
+        div.listEach p>button {
+            padding: 8px 16px;
+            display: flex;
+            border: none;
+            border-radius: 4px;
+            background-color: #dc2114;
+            font: 900 16px/1 'Pretendard-Black', sans-serif; color: #fff;
+            cursor: pointer;
+        }
