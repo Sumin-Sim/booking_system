@@ -133,6 +133,9 @@ section#bookMain {
             flex-direction: column; justify-content: space-between; align-content: space-between;
             display: none;
         }
+        fieldset:nth-of-type(2).show {
+            display: flex;
+        }
         /* common */
         fieldset:nth-of-type(2) ul, fieldset:nth-of-type(2) div {
             width: 100%;
@@ -279,6 +282,9 @@ div#bookModal {
     z-index: 100;
     display: none;
 }
+div#bookModal.show {
+    display: flex;
+}
     div#bookModal>div.bookModal {
         width: 640px; height: 640px;
         padding: 64px;
@@ -327,6 +333,9 @@ div#bookModal {
         margin-bottom: 4px;
     }
     div.bookModal dd:nth-of-type(5) {
+        margin-bottom: 4px;
+    }
+    div.bookModal dd:nth-of-type(6) {
         height: 112px;
         padding: 8px 16px;
         overflow: scroll;
@@ -388,7 +397,7 @@ div#bookModal {
 
 /* bookList */
 section#bookList {
-    width: 100%;
+    width: 100%; min-height: 800px;
     background-color: #ab9078;
 }
     section#bookList>div {
@@ -419,7 +428,7 @@ section#bookList {
                 width: 904px; height: 100%;
                 box-sizing: border-box;
                 outline: none;
-                border: 2px #3b1a0b solid;
+                border: none;
                 border-right: none;
                 text-indent: 16px;
             }
@@ -436,6 +445,10 @@ section#bookList {
                 color: #fff;
                 cursor: pointer;
             }
+            div.sortBtn>p {
+                width: 100%;
+                text-align: center;
+            }
             div.sortBtn>p>span {
                 position: absolute;
                 top: 8px; right: 8px;
@@ -449,10 +462,14 @@ section#bookList {
                 top: 0; right: 0;
                 box-sizing: border-box;
                 background-color: #3b1a0b;
+                z-index: 100;
                 display: none;
             }
+            div.sortBtn>ul.show {
+                display: flex;
+            }
             div.sortBtn>ul>li {
-                height: 32px;
+                width: 100%; height: 32px;
                 display: flex;
                 justify-content: center; align-items: center;
             }
@@ -507,5 +524,86 @@ section#bookList {
             border-radius: 4px;
             background-color: #dc2114;
             font: 900 16px/1 'Pretendard-Black', sans-serif; color: #fff;
+            cursor: pointer;
+        }
+
+    
+    /* deleteModal */
+    div#deleteModal {
+        width: 100%; height: 100%;
+        position: fixed;
+        top: 0; left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        display: none;
+    }
+    div#deleteModal.show {
+        display: flex;
+    }
+        div.deleteModal {
+            width: 640px; height: 320px;
+            padding: 64px;
+            position: fixed;
+            top: calc(50% - 160px); left: calc(50% - 320px);
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+        div.deleteModal h4 {
+            margin-bottom: 32px; padding-bottom: 16px;
+            font: 900 24px/1 'Pretendard-Black', sans-serif; color: #3b1a0b;
+            text-indent: 40px; line-height: 32px;
+            position: relative;
+            border-bottom: 2px #3b1a0b solid;
+        }
+        div.deleteModal h4>span {
+            position: absolute;
+            top: 0px; left: -40px;
+            font-size: 32px;
+        }
+        div.deleteModal div>label {
+            margin-bottom: 8px;
+            float: left;
+        }
+        div.deleteModal div>label>b {
+            font: 900 16px/1 'Pretendard-Black', sans-serif; color: #ab9078;
+        }
+        div.deleteModal div>input {
+            width: 160px; height: 24px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            float: right;
+            border: 1px #3b1a0b solid;
+            outline: none;
+        }
+        div.deleteModal div>p {
+            width: 240px;
+            position: absolute;
+            top: 174px; left: 88px;
+            color: #dc2114;
+        }
+        div.deleteModal div>p>span {
+            font-size: 20px;
+            position: absolute;
+            top: -2px; left: -24px;
+            color: #dc2114;
+
+        }
+        div.deleteModal>button {
+            width: 120px;
+            padding: 8px 24px;
+            position: absolute;
+            bottom: 64px; left: calc(50% - 60px);
+            background-color: #ab9078;
+            font: 900 16px/1 'Pretendard-Black', sans-serif; color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        div.deleteModal>button:hover {
+            background-color: #3b1a0b;
+        }
+        div.deleteModal>p {
+            position: absolute;
+            top: 32px; right: 32px;
+            font-size: 32px; color: #3b1a0b;
             cursor: pointer;
         }

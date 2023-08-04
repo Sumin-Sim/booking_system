@@ -1,24 +1,111 @@
 import { PiCalendarPlusDuotone, PiCalendarCheckDuotone } from "react-icons/pi";
 import { BsExclamationCircleFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
+import { useState } from "react";
 
 export default function BookMain(props) {
+    // form
+    let initData = {
+        "id": "",
+        "bookOption": "",
+        "bookDate": "",
+        "bookTime": "",
+        "bookNum": "",
+        "userName": "",
+        "userTel": "",
+        "userMail": "",
+        "userMemo": "",
+        "userPw": ""
+    }
+
+    const [formData,setFormData] = useState(initData);
+
+
+    // page change
+    const form02 = document.querySelector('fieldset:nth-of-type(2)');
+
+    function nextPage() {
+        if(formData.bookOption == false) {
+            alert('예약 항목을 선택해주세요!');
+        } else {
+            form02?.classList.add('show');
+        }
+    }
+    function prevPage() {
+        form02?.classList.remove('show');
+    }
+    function formSend() {
+        if(
+            formData.id == false ||
+            formData.bookOption == false ||
+            formData.bookDate == false ||
+            formData.bookTime == false ||
+            formData.bookNum == false ||
+            formData.userName == false ||
+            formData.userTel == false ||
+            formData.userMail == false) {
+            alert('모든 항목을 입력해주세요!');
+        } else {
+            const modal = document.querySelector('div#bookModal');
+            modal?.classList.add('show');
+        }
+    }
+    function formEnd() {
+        if(formData.userPw == false) {
+            alert('비밀번호를 입력해주세요!');
+        } else {
+            const formInfo = {
+                "id": formData.id,
+                "bookOption": formData.bookOption,
+                "bookDate": formData.bookDate,
+                "bookTime": formData.bookTime,
+                "bookNum": formData.bookNum,
+                "userName": formData.userName,
+                "userTel": formData.userTel,
+                "userMail": formData.userMail,
+                "userMemo": formData.userMemo,
+                "userPw": formData.userPw
+            }
+
+            form02?.classList.remove('show');
+            document.querySelector('div#bookModal').classList.remove('show');
+            
+            props.newForm(formInfo);
+        }
+    }
+
+
+    // export
     return (
         <section id="bookMain">
             <h2><span><PiCalendarPlusDuotone /></span>예약하기</h2>
             
-            <form name="booking" method="post">
+            <form onSubmit={(e) => e.preventDefault()}>
                 <BookStep01
                     optionData = {props.optionData}
+                    pageChange = {nextPage}
+                    formData = {formData}
+                    setFormData = {setFormData}
                 />
-                <BookStep02 />
-                <BookModal />
+                <BookStep02
+                    pageChange = {prevPage}
+                    formSend = {formSend}
+                    formData = {formData}
+                    setFormData = {setFormData}
+                    formIdSet = {props.formIdSet}
+                />
+                <BookModal
+                    formData = {formData}
+                    setFormData = {setFormData}
+                    formEnd = {formEnd}
+                />
             </form>
         </section>
     );
 }
 
 function BookStep01(props) {
+    // export
     return (
         <fieldset>
             <legend>1단계. 예약 항목 선택</legend>
@@ -27,8 +114,9 @@ function BookStep01(props) {
                 {
                 props.optionData.map(item => {
                     return (
-                        <li>
-                            <input type="radio" name="bookOption" id={item.value} value={item.value} required />
+                        <li key={item.id}>
+                            <input type="radio" name="bookOption" id={item.value} value={item.value}
+                            onChange={(e) => props.setFormData({...props.formData,bookOption:e.target.value})}/>
                             <label htmlFor={item.value}>
                                 <figure>
                                     <img src={item.imgsrc} alt={item.title}/>
@@ -49,11 +137,12 @@ function BookStep01(props) {
                 }
             </ul>
 
-            <button type="button" className="nextStep">다음 단계</button>
+            <button type="button" className="nextStep" onClick={() => props.pageChange()}>다음 단계</button>
         </fieldset>
     );
 }
-function BookStep02() {
+function BookStep02(props) {
+    // export
     return (
         <>
             <fieldset>
@@ -62,17 +151,20 @@ function BookStep02() {
                 <ul>
                     <li>
                         <label htmlFor="bookDate">예약 날짜</label>
-                        <input type="date" id="bookDate" name="bookDate" required />
+                        <input type="date" id="bookDate" name="bookDate"
+                        onChange={(e) => props.setFormData({...props.formData,bookDate:e.target.value})}/>
                     </li>
                     <li><span></span></li>
                     <li>
                         <label htmlFor="bookTime">예약 시간</label>
-                        <input type="time" id="bookTime" name="bookTime" required />
+                        <input type="time" id="bookTime" name="bookTime"
+                        onChange={(e) => props.setFormData({...props.formData,bookTime:e.target.value})}/>
                     </li>
                     <li><span></span></li>
                     <li>
                         <label htmlFor="bookNum">예약 인원</label>
-                        <input type="number" id="bookNum" name="bookNum" required max={4} />
+                        <input type="number" id="bookNum" name="bookNum" max={4}
+                        onChange={(e) => props.setFormData({...props.formData,bookNum:e.target.value})}/>
                         <p>원데이 클래스는 최대 4인까지 동시 수강 가능합니다.</p>
                     </li>
                 </ul>
@@ -80,23 +172,27 @@ function BookStep02() {
                 <ul>
                     <li>
                         <label htmlFor="userName">예약자</label>
-                        <input type="text" id="userName" name="userName" required />
+                        <input type="text" id="userName" name="userName"
+                        onChange={(e) => props.setFormData({...props.formData,userName:e.target.value})}/>
                     </li>
                     <li><span></span></li>
                     <li>
                         <label htmlFor="userTel">연락처</label>
-                        <input type="tel" id="userTel" name="userTel" required />
+                        <input type="tel" id="userTel" name="userTel"
+                        onChange={(e) => props.setFormData({...props.formData,userTel:e.target.value})}/>
                     </li>
                     <li><span></span></li>
                     <li>
                         <label htmlFor="userMail">이메일</label>
-                        <input type="email" id="userMail" name="userMail" required />
+                        <input type="email" id="userMail" name="userMail"
+                        onChange={(e) => props.setFormData({...props.formData,userMail:e.target.value})}/>
                     </li>
                 </ul>
 
                 <div>
                     <label htmlFor="userMemo">요청사항</label>
-                    <textarea id="userMemo" name="userMemo" placeholder="추가 요청사항을 적어주세요."></textarea>
+                    <textarea id="userMemo" name="userMemo" placeholder="추가 요청사항을 적어주세요."
+                    onChange={(e) => props.setFormData({...props.formData,userMemo:e.target.value})}></textarea>
                 </div>
 
                 <div>
@@ -230,7 +326,8 @@ function BookStep02() {
 
                 <ul>
                     <li>
-                        <input type="checkbox" id="service01" name="service01" required />
+                        <input type="checkbox" id="service01" name="service01"
+                        onChange={() => props.setFormData({...props.formData,id:props.formIdSet + 1})}/>
                         <label htmlFor="service01">
                             예약 서비스 이용을 위한 약관, 개인정보 수집 및 제3자 제공 규정을 확인하였으며 이에 동의합니다.
                         </label>
@@ -243,38 +340,100 @@ function BookStep02() {
                     </li>
                 </ul>
                 
-                <button type="button" className="prevStep">이전 단계</button>
-                <button type="button" className="nextStep">다음 단계</button>
+                <button type="button" className="prevStep" onClick={() => props.pageChange()}>이전 단계</button>
+                <button type="button" className="nextStep" onClick={() => props.formSend()}>다음 단계</button>
             </fieldset>
         </>
     );
 }
 
 
-function BookModal() {
+function BookModal(props) {
+    // 외 n명
+    function numWithout() {
+        if(props.formData.bookNum > 1) {
+            return (` 외 ${props.formData.bookNum - 1}명`);
+        }
+    }
+
+    // bookOption을 text로 바꾸기
+    function optionText() {
+        const option = props.formData.bookOption;
+        switch(option) {
+            case "order_01": {
+                let optionText = '주문 제작 컵케이크';
+                return optionText;
+            };
+                break;
+            case "order_02": {
+                let optionText = '주문 제작 3단 케이크';
+                return optionText;
+            };
+                break;
+            case "order_03": {
+                let optionText = '주문 제작 과일 쿠키';
+                return optionText;
+            };
+                break;
+            case "order_04": {
+                let optionText = '주문 제작 플라워 케이크';
+                return optionText;
+            };
+                break;
+            case "class_01": {
+                let optionText = '마카롱 원데이 클래스';
+                return optionText;
+            }
+                break;
+            case "class_02": {
+                let optionText = '레몬 마들렌 원데이 클래스';
+                return optionText;
+            }
+                break;
+            case "class_03": {
+                let optionText = '머핀 원데이 클래스';
+                return optionText;
+            }
+                break;
+            case "class_04": {
+                let optionText = '아이싱 쿠키 원데이 클래스';
+                return optionText;
+            }
+        }
+    }
+
+    // modal close
+    const modal = document.querySelector('div#bookModal');
+    function modalClose() {
+        modal?.classList.remove('show');
+    }
+
+    // export
     return (
         <div id="bookModal">
             <div className="bookModal">
                 <h4><span><PiCalendarCheckDuotone /></span>예약 정보</h4>
 
                 <dl>
-                    <dt>예약자명 외 (예약인원 - 1)명</dt>
+                    <dt>{props.formData.userName}{numWithout()}</dt>
 
-                    <dd>2000년 01월 01일</dd>
-                    <dd>12시 00분</dd>
-                    <dd>주문 제작 / 원데이 클래스</dd>
-                    <dd>010-0000-0000</dd>
-                    <dd>메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. 메모내용을 입력하세요. </dd>
+                    <dd>{props.formData.bookDate}</dd>
+                    <dd>{props.formData.bookTime}</dd>
+                    <dd>{optionText()}</dd>
+                    <dd>{props.formData.userTel}</dd>
+                    <dd>{props.formData.userMail}</dd>
+                    <dd>{props.formData.userMemo}</dd>
                 </dl>
 
                 <div>
                     <label htmlFor="userPw">예약 정보에 이상이 없다면 <b>본인확인용 암호</b>를 입력해주세요.</label>
-                    <input type="password" id="userPw" name="userPw"/>
+                    <input type="password" id="userPw" name="userPw"
+                    onChange={(e) => props.setFormData({...props.formData,userPw:e.target.value})}/>
                     <p><span><BsExclamationCircleFill /></span>암호 분실 시 예약 취소가 어려울 수 있으므로 반드시 기억해주세요.</p>
                 </div>
 
-                <input type="submit" value="예약 완료"></input>
-                <p><AiOutlineClose /></p>
+                <input type="submit" value="예약 완료" onClick={props.formEnd} />
+                <p onClick={() => modalClose()}><AiOutlineClose /></p>
             </div>
         </div>
     );

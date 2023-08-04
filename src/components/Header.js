@@ -1,4 +1,5 @@
 export default function Header() {
+    // export
     return (
         <header>
                 <h1>Sweet Bakery</h1>
