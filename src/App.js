@@ -37,7 +37,6 @@ export default function App() {
 
     // Delete
     function onDelete(id) {
-        
         setData(data.filter(item => item.id !== id));
     }
 
